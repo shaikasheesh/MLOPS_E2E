@@ -1,0 +1,20 @@
+dataset:
+  data: data\\raw\\Employee.csv
+  encoding: iso-8859-1
+
+processed:
+  data_transformed: data\\processed\\Employee_Transform.csv
+
+features:
+  target: LeaveOrNot
+  input_features: 
+    - JoiningYear
+    - PaymentTier
+    - Age
+    - EverBenched_Yes
+    - ExperienceInCurrentDomain
+    - Education_Masters
+    - Education_PHD
+    - City_New Delhi
+    - City_Pune
+    - Gender_Male

@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/Machine_Learning_Ops/mlops_1/mlruns/421620380481640792/14b40588ee34412b8090d8b2ad0d0bb6/artifacts
+end_time: 1707580928882
+entry_point_name: ''
+experiment_id: '421620380481640792'
+lifecycle_stage: active
+run_id: 14b40588ee34412b8090d8b2ad0d0bb6
+run_name: DecisionTreeClassifier
+run_uuid: 14b40588ee34412b8090d8b2ad0d0bb6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1707580924813
+status: 3
+tags: []
+user_id: Admin
