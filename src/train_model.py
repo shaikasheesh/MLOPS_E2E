@@ -17,6 +17,8 @@ from urllib.parse import urlparse
 import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, auc
 
+import dagshub
+dagshub.init(repo_owner='shaikasheesh', repo_name='MLOPS_E2E', mlflow=True)
 import logging
 logging.basicConfig(level=logging.WARN)
 logger = logging.getLogger(__name__)
@@ -71,7 +73,8 @@ def model_building(X_train,X_test,Y_train,Y_test,model,exp_name,model_name,run_n
         mlflow.log_metric("f1_scoree", f1_scoree)
         mlflow.log_metric("precision", precision)
         mlflow.log_metric("recall", recall)     
- 
+        #mlflow.autolog()
+
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
                 # Model registry does not work with file store
@@ -88,10 +91,10 @@ def train_model(config):
     X = df_transform[config.features.input_features]
     Y = df_transform[config.features.target]
     X_train,X_test,Y_train,Y_test = train_test_split(X,Y,test_size=0.2)
-    model = RandomForestClassifier()
+    model = DecisionTreeClassifier()
     exp_name = 'Employee Churn'
-    model_name = 'RandomForestClassifier'
-    run_name = 'RandomForestClassifier'
+    model_name = 'DecisionTreeClassifier'
+    run_name = 'DecisionTreeClassifier'
     model_building(X_train,X_test,Y_train,Y_test,model,exp_name,model_name,run_name)
     
 
