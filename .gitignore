@@ -100,4 +100,4 @@ notebooks/*
 /data
 
 # models
-models/*/*
+models
