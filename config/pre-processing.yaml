@@ -18,3 +18,8 @@ features:
     - City_New Delhi
     - City_Pune
     - Gender_Male
+
+model:
+  dir: models
+  name: RandomForest
+  path: ${model.dir}/${model.name}
