@@ -94,7 +94,6 @@ outputs
 
 # Data
 data
-
 # Notebooks
 notebooks/*
 /data
