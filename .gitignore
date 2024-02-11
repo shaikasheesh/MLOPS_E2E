@@ -99,3 +99,5 @@ data/*/*
 notebooks/*
 /data
 
+# models
+models/*
