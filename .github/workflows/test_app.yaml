@@ -8,7 +8,7 @@ on:
     branches:
       - main
   workflow_dispatch:
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,6 +16,18 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+
+    - name: Install DVC
+      run: pip install dvc
+
+    - name: Set up DVC remote repository
+      run: |
+        dvc init
+        dvc remote add origin s3://dvc
+        dvc remote modify origin-s3 endpointurl https://dagshub.com/shaikasheesh/MLOPS_E2E.s3
+        dvc remote modify origin-s3 --local access_key_id 54e8af5c56141dcea8d7b9399793ee2d59893c34
+        dvc remote modify origin-s3 --local secret_access_key 54e8af5c56141dcea8d7b9399793ee2d59893c34
+        dvc pull models
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
