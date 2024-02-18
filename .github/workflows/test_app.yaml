@@ -22,10 +22,7 @@ jobs:
 
     - name: Set up DVC remote repository
       run: |
-        dvc remote add origin s3://dvc
-        dvc remote modify origin-s3 endpointurl https://dagshub.com/shaikasheesh/MLOPS_E2E.s3
-        dvc remote modify origin-s3 --local access_key_id 54e8af5c56141dcea8d7b9399793ee2d59893c34
-        dvc remote modify origin-s3 --local secret_access_key 54e8af5c56141dcea8d7b9399793ee2d59893c34
+        dvc remote add origin https://dagshub.com/shaikasheesh/MLOPS_E2E.dvc
         dvc pull models
 
     - name: Set up Docker Buildx
