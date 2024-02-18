@@ -10,7 +10,7 @@ def prediction(Joining_Year,PaymentTier,Age,ExperienceInCurrentDomain,Education_
                 City_Pune,Gender_Male,EverBenched_Yes]])
 
 def pipeline():
-    st.title('Employee Churn Application')
+    st.title('Employee Churn Application Setup')
     Joining_Year= st.text_input('Joining Year')
     PaymentTier = st.text_input('PaymentTier')
     Age = st.text_input('Age')
