@@ -7,8 +7,7 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,8 +24,29 @@ jobs:
 
     - name: Run tests in Docker container
       run: |
-        docker run --rm my-docker-image pytest
+        curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+        source $HOME/.poetry/env
 
-    - name: Run linting in Docker container
+    - name: Install dependencies
+      run: poetry install
+
+    - name: Run unit tests
+      run: poetry run pytest
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    needs: test
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Install Poetry
       run: |
         docker run --rm my-docker-image pylint .
