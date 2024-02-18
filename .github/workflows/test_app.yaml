@@ -18,7 +18,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Install DVC
-      run: pip install dvc
+      run: pip install dvc[s3]
 
     - name: Set up DVC remote repository
       run: |
