@@ -97,6 +97,3 @@ data
 # Notebooks
 notebooks/*
 /data
-
-# models
-models
