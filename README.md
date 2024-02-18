@@ -114,3 +114,5 @@ MLFLOW_TRACKING_URI=https://dagshub.com/shaikasheesh/MLOPS_E2E.mlflow \
 MLFLOW_TRACKING_USERNAME=shaikasheesh \
 MLFLOW_TRACKING_PASSWORD=54e8af5c56141dcea8d7b9399793ee2d59893c34 \
 python script.py
+
+workflow is also added
