@@ -17,15 +17,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Install DVC
-      run: pip install dvc[s3]
-
-    - name: Set up DVC remote repository
-      run: |
-        dvc remote add origin s3://dvc
-        dvc remote modify origin endpointurl https://dagshub.com/shaikasheesh/MLOPS_E2E.s3
-        dvc remote default origin
-        dvc pull models
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
