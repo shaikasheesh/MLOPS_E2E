@@ -22,8 +22,8 @@ jobs:
 
     - name: Set up DVC remote repository
       run: |
-        dvc remote default origin
         dvc remote add origin-s3 endpointurl https://dagshub.com/shaikasheesh/MLOPS_E2E.s3
+        dvc remote default origin
         dvc pull models
 
     - name: Set up Docker Buildx
